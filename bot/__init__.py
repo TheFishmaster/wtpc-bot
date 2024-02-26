@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 import random
 
-
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -23,5 +22,13 @@ async def ping(ctx):
 @bot.command()
 async def diceroll(ctx, sides=6):
     result = random.randint(1, sides)
-
     await ctx.send(result)
+
+# Modifying dice rolls
+from d20 import roll
+@bot.command()
+async def diceroll2(ctx):
+    while True:
+        roll_result = roll(input(), allow_comments=True)
+        await ctx.send(roll_result)
+
