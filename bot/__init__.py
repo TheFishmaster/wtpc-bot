@@ -24,8 +24,11 @@ async def diceroll(ctx, sides=6):
     result = random.randint(1, sides)
     await ctx.send(result)
 
+
 # Modifying dice rolls
 from d20 import roll
+
+
 @bot.command()
 async def diceroll2(ctx):
     while True:
